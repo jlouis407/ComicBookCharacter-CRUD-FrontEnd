@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import ComicBookCharacterService from '../services/ComicBookCharacterService';
+import SuperheroService from '../services/SuperheroService';
 
-class ListComicBookCharacter extends Component {
+class ListSuperheroComponent extends Component {
 
     constructor(props){
         super(props)
 
         this.state = {
-            comicBookCharacters: []
+            superheroes: []
         }
     }
 
     componentDidMount(){
-        ComicBookCharacterService.getComicBookCharacters().then((res) => {
-            this.setState({ comicBookCharacters: res.data})
+        SuperheroService.getSuperheroes().then((res) => {
+            this.setState({ superheroes: res.data})
         });
     }
 
     render() {
         return (
             <div>
-                <h2 className="text-center">Comic Book Character List</h2>
+                <h2 className="text-center">Superhero List</h2>
                 <div className="row">
                     <table className="table table-stripped table-bordered">
                         <thead>
@@ -35,13 +35,13 @@ class ListComicBookCharacter extends Component {
 
                         <tbody>
                             {
-                                this.state.comicBookCharacters.map (
-                                    comicBookCharacter =>
-                                    <tr key = {comicBookCharacter.id}>
-                                        <td>{comicBookCharacter.name}</td>
-                                        <td>{comicBookCharacter.status}</td>
-                                        <td>{comicBookCharacter.brand}</td>
-                                        <td>{comicBookCharacter.year}</td>
+                                this.state.superheroes.map (
+                                    superhero =>
+                                    <tr key = {superhero.id}>
+                                        <td>{superhero.name}</td>
+                                        <td>{superhero.status}</td>
+                                        <td>{superhero.brand}</td>
+                                        <td>{superhero.year}</td>
                                     </tr>
                                 )
                             }
@@ -54,4 +54,4 @@ class ListComicBookCharacter extends Component {
     }
 }
 
-export default ListComicBookCharacter;
+export default ListSuperheroComponent;

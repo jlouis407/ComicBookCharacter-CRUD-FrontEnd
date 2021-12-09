@@ -13,7 +13,7 @@ class HeaderComponent extends Component {
             <div>
                 <header>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                        <div><a href="" className="navbar-brand">Comic Book Character Management App</a></div>
+                        <div><a href="" className="navbar-brand">Superhero Management App</a></div>
 
                     </nav>
                 </header>
