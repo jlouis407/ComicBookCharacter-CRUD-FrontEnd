@@ -74,7 +74,13 @@ class CreateSuperheroComponent extends Component {
         this.props.history.push('/superheroes');
     }
 
-
+    getTitle(){
+        if(this.state.id == -1){
+            return <h3 className = "text-center">Add Superhero</h3>
+        } else {
+            return <h3 className = "text-center">Update Superhero</h3>
+        }
+    }
 
     render() {
         return (
@@ -82,7 +88,9 @@ class CreateSuperheroComponent extends Component {
                 <div className = "container">
                     <div className = "row">
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
-                            <h3 className = "text-center">Add Superhero</h3>
+                            {
+                                this.getTitle()
+                            }
                             <div className = "card-body">
                                 <form>
                                     <div className = "form-group">
