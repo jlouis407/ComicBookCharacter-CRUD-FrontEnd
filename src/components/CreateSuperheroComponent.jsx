@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SuperheroService from '../services/SuperheroService';
 
 class CreateSuperheroComponent extends Component {
     constructor(props){
@@ -22,6 +23,10 @@ class CreateSuperheroComponent extends Component {
         e.preventDefault();
         let superhero = {name: this.state.name, brand: this.state.brand, year: this.state.year, status: this.state.status};
         console.log('superhero => ' + JSON.stringify(superhero));
+
+        SuperheroService.createSuperhero(superhero).then(res => {
+            this.props.history.push('/superheroes');
+        });
     }
 
     changeNameHandler = (event) => {

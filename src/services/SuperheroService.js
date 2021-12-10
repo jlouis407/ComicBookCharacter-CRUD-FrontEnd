@@ -8,6 +8,10 @@ class SuperheroService {
         return axios.get(SUPERHERO_API_BASE_URL);
     }
 
+    createSuperhero(superhero){
+        return axios.post(SUPERHERO_API_BASE_URL, superhero);
+    }
+
 }
 
 export default new SuperheroService();
