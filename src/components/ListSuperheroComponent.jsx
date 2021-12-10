@@ -26,9 +26,9 @@ class ListSuperheroComponent extends Component {
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Status</th>
                                 <th>Brand</th>
                                 <th>Year</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -39,9 +39,9 @@ class ListSuperheroComponent extends Component {
                                     superhero =>
                                     <tr key = {superhero.id}>
                                         <td>{superhero.name}</td>
-                                        <td>{superhero.status}</td>
                                         <td>{superhero.brand}</td>
                                         <td>{superhero.year}</td>
+                                        <td>{superhero.status}</td>
                                     </tr>
                                 )
                             }
