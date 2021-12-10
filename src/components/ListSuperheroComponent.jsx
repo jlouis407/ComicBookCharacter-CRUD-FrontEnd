@@ -15,7 +15,7 @@ class ListSuperheroComponent extends Component {
     }
 
     editSuperhero(id){
-        this.props.history.push(`/update-superhero/${id}`);
+        this.props.history.push(`/add-superhero/${id}`);
     }
 
     componentDidMount(){
@@ -25,7 +25,7 @@ class ListSuperheroComponent extends Component {
     }
 
     addSuperhero(){
-        this.props.history.push('/add-superhero');
+        this.props.history.push('/add-superhero/-1');
     }
 
     render() {
