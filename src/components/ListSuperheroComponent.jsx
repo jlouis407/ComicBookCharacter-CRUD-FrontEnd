@@ -11,6 +11,11 @@ class ListSuperheroComponent extends Component {
         }
 
         this.addSuperhero = this.addSuperhero.bind(this);
+        this.editSuperhero = this.editSuperhero.bind(this);
+    }
+
+    editSuperhero(id){
+        this.props.history.push(`/update-superhero/${id}`);
     }
 
     componentDidMount(){
@@ -51,6 +56,9 @@ class ListSuperheroComponent extends Component {
                                         <td>{superhero.brand}</td>
                                         <td>{superhero.year}</td>
                                         <td>{superhero.status}</td>
+                                        <td>
+                                            <button onClick = { () => this.editSuperhero(superhero.id)} className="btn btn-info">Update</button>
+                                        </td>
                                     </tr>
                                 )
                             }

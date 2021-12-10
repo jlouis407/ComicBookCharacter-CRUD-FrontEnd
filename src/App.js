@@ -1,6 +1,7 @@
 import './App.css';
 import ListSuperheroComponent from './components/ListSuperheroComponent';
 import CreateSuperheroComponent from './components/CreateSuperheroComponent';
+import UpdateSuperheroComponent from './components/UpdateSuperheroComponent';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
@@ -15,6 +16,7 @@ function App() {
                 <Route path = "/" exact component = {ListSuperheroComponent}></Route>
                 <Route path = "/superheroes" component = {ListSuperheroComponent}></Route>
                 <Route path = "/add-superhero" component = {CreateSuperheroComponent}></Route>
+                <Route path = "/update-superhero/:id" component = {UpdateSuperheroComponent}></Route>
               </Switch>
             </div>
           <FooterComponent/>

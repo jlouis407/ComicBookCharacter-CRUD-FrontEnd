@@ -12,6 +12,14 @@ class SuperheroService {
         return axios.post(SUPERHERO_API_BASE_URL, superhero);
     }
 
+    getSuperheroById(superheroId){
+        return axios.get(SUPERHERO_API_BASE_URL + '/' + superheroId);
+    }
+
+    updateSuperhero(superhero, superheroId){
+        return axios.put(SUPERHERO_API_BASE_URL + '/' + superheroId, superhero)
+    }
+
 }
 
 export default new SuperheroService();
