@@ -17,7 +17,7 @@ class CreateSuperheroComponent extends Component {
         this.changeBrandHandler = this.changeBrandHandler.bind(this);
         this.changeYearHandler = this.changeYearHandler.bind(this);
         this.changeStatusHandler = this.changeStatusHandler.bind(this);
-        this.saveSuperhero = this.saveSuperhero.bind(this);
+        this.saveOrUpdateSuperhero = this.saveOrUpdateSuperhero.bind(this);
     }
 
     componentDidMount(){
@@ -36,7 +36,7 @@ class CreateSuperheroComponent extends Component {
     }
 
 
-    saveSuperhero = (e) => {
+    saveOrUpdateSuperhero = (e) => {
         e.preventDefault();
         let superhero = {name: this.state.name, brand: this.state.brand, year: this.state.year, status: this.state.status};
         console.log('superhero => ' + JSON.stringify(superhero));
@@ -114,7 +114,7 @@ class CreateSuperheroComponent extends Component {
                                                value={this.state.status} onChange={this.changeStatusHandler}/>
                                     </div>
 
-                                    <button className="btn btn-success" onClick={this.saveSuperhero}>Save</button>
+                                    <button className="btn btn-success" onClick={this.saveOrUpdateSuperhero}>Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                 </form>
                             </div>
