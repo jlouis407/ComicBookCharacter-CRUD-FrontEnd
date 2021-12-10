@@ -9,6 +9,8 @@ class ListSuperheroComponent extends Component {
         this.state = {
             superheroes: []
         }
+
+        this.addSuperhero = this.addSuperhero.bind(this);
     }
 
     componentDidMount(){
@@ -17,10 +19,17 @@ class ListSuperheroComponent extends Component {
         });
     }
 
+    addSuperhero(){
+        this.props.history.push('/add-superhero');
+    }
+
     render() {
         return (
             <div>
                 <h2 className="text-center">Superhero List</h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.addSuperhero}>Add Superhero</button>
+                </div>
                 <div className="row">
                     <table className="table table-stripped table-bordered">
                         <thead>
