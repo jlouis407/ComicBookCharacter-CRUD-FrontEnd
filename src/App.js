@@ -15,8 +15,8 @@ function App() {
               <Switch>
                 <Route path = "/" exact component = {ListSuperheroComponent}></Route>
                 <Route path = "/superheroes" component = {ListSuperheroComponent}></Route>
-                <Route path = "/add-superhero" component = {CreateSuperheroComponent}></Route>
-                <Route path = "/update-superhero/:id" component = {UpdateSuperheroComponent}></Route>
+                <Route path = "/add-superhero/:id" component = {CreateSuperheroComponent}></Route>
+                {/* <Route path = "/update-superhero/:id" component = {UpdateSuperheroComponent}></Route>*/}
               </Switch>
             </div>
           <FooterComponent/>

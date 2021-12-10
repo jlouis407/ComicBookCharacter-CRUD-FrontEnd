@@ -6,6 +6,7 @@ class CreateSuperheroComponent extends Component {
         super(props)
 
         this.state = {
+            id: this.props.match.params.id,
             name: '',
             brand: '',
             year: '',
@@ -19,14 +20,38 @@ class CreateSuperheroComponent extends Component {
         this.saveSuperhero = this.saveSuperhero.bind(this);
     }
 
+    componentDidMount(){
+
+        if(this.state.id == -1){
+            return
+        } else {
+            SuperheroService.getSuperheroById(this.state.id).then((res) => {
+                let superhero = res.data;
+                this.setState({name: superhero.name, 
+                    brand: superhero.brand, 
+                    year: superhero.year, 
+                    status: superhero.status})
+            });
+        }
+    }
+
+
     saveSuperhero = (e) => {
         e.preventDefault();
         let superhero = {name: this.state.name, brand: this.state.brand, year: this.state.year, status: this.state.status};
         console.log('superhero => ' + JSON.stringify(superhero));
 
-        SuperheroService.createSuperhero(superhero).then(res => {
-            this.props.history.push('/superheroes');
-        });
+        if(this.state.id == -1){
+            SuperheroService.createSuperhero(superhero).then(res => {
+                this.props.history.push('/superheroes');
+            });
+        } else {
+            SuperheroService.updateSuperhero(superhero, this.state.id).then(res => {
+                this.props.history.push('/superheroes');
+            });
+        }
+
+        
     }
 
     changeNameHandler = (event) => {
