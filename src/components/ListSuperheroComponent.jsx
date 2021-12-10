@@ -12,6 +12,14 @@ class ListSuperheroComponent extends Component {
 
         this.addSuperhero = this.addSuperhero.bind(this);
         this.editSuperhero = this.editSuperhero.bind(this);
+        this.deleteSuperhero = this.deleteSuperhero.bind(this);
+    }
+
+    deleteSuperhero(id){
+        SuperheroService.deleteSuperhero(id).then( res => {
+            this.setState({superheroes: this.state.superheroes.filter(superhero => superhero.id !== id)});
+        });
+
     }
 
     editSuperhero(id){
@@ -58,6 +66,7 @@ class ListSuperheroComponent extends Component {
                                         <td>{superhero.status}</td>
                                         <td>
                                             <button onClick = { () => this.editSuperhero(superhero.id)} className="btn btn-info">Update</button>
+                                            <button style={{marginLeft: "10px"}}onClick = { () => this.deleteSuperhero(superhero.id)} className="btn btn-danger">Delete</button>
                                         </td>
                                     </tr>
                                 )

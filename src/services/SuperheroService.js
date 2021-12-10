@@ -17,7 +17,11 @@ class SuperheroService {
     }
 
     updateSuperhero(superhero, superheroId){
-        return axios.put(SUPERHERO_API_BASE_URL + '/' + superheroId, superhero)
+        return axios.put(SUPERHERO_API_BASE_URL + '/' + superheroId, superhero);
+    }
+
+    deleteSuperhero(superheroId){
+        return axios.delete(SUPERHERO_API_BASE_URL + '/' + superheroId);
     }
 
 }
