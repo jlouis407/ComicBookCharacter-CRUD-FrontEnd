@@ -85,9 +85,9 @@ class CreateSuperheroComponent extends Component {
     render() {
         return (
             <div>
-                <div className = "container">
+                <div style={{paddingTop: "25px"}} className = "container">
                     <div className = "row">
-                        <div className = "card col-md-6 offset-md-3 offset-md-3">
+                        <div style={{paddingTop: "15px"}} className = "card col-md-6 offset-md-3 offset-md-3">
                             {
                                 this.getTitle()
                             }

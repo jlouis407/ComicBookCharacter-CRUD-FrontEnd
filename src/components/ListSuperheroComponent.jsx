@@ -39,11 +39,11 @@ class ListSuperheroComponent extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center">Superhero List</h2>
+                <h2 style={{paddingTop: "25px"}} className="text-center">Superhero List</h2>
                 <div className="row">
                     <button className="btn btn-primary" onClick={this.addSuperhero}>Add Superhero</button>
                 </div>
-                <div className="row">
+                <div style={{paddingTop: "25px"}} className="row">
                     <table className="table table-stripped table-bordered">
                         <thead>
                             <tr>
