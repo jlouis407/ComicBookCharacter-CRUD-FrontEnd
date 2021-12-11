@@ -110,8 +110,12 @@ class CreateSuperheroComponent extends Component {
                                     </div>
                                     <div className = "form-group">
                                         <label>Status: </label>
-                                        <input placeholder="Status" name = "status" className="form-control"
-                                               value={this.state.status} onChange={this.changeStatusHandler}/>
+                                        <select name = "status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler}>
+                                            <option value="ALIVE">ALIVE</option>
+                                            <option value="DECEASED">DECEASED</option>
+                                            <option value="UNKNOWN">UNKNOWN</option>
+                                        </select>
+
                                     </div>
 
                                     <button className="btn btn-success" onClick={this.saveOrUpdateSuperhero}>Save</button>
