@@ -84,11 +84,17 @@ class UpdateSuperheroComponent extends Component {
                                         <input placeholder="Year" name = "year" className="form-control"
                                                value={this.state.year} onChange={this.changeYearHandler}/>
                                     </div>
+
                                     <div className = "form-group">
                                         <label>Status: </label>
-                                        <input placeholder="Status" name = "status" className="form-control"
-                                               value={this.state.status} onChange={this.changeStatusHandler}/>
+                                        <select name = "status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler}>
+                                            <option label="--- SELECT AN OPTION ---"></option>
+                                            <option value="ALIVE">ALIVE</option>
+                                            <option value="DECEASED">DECEASED</option>
+                                            <option value="UNKNOWN">UNKNOWN</option>
+                                        </select>
                                     </div>
+                                   
 
                                     <button className="btn btn-success" onClick={this.updateSuperhero}>Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
