@@ -22,7 +22,7 @@ class CreateSuperheroComponent extends Component {
 
     componentDidMount(){
 
-        if(this.state.id == -1){
+        if(this.state.id == '_add'){
             return
         } else {
             SuperheroService.getSuperheroById(this.state.id).then((res) => {
@@ -41,7 +41,7 @@ class CreateSuperheroComponent extends Component {
         let superhero = {name: this.state.name, brand: this.state.brand, year: this.state.year, status: this.state.status};
         console.log('superhero => ' + JSON.stringify(superhero));
 
-        if(this.state.id == -1){
+        if(this.state.id == '_add'){
             SuperheroService.createSuperhero(superhero).then(res => {
                 this.props.history.push('/superheroes');
             });
@@ -75,7 +75,7 @@ class CreateSuperheroComponent extends Component {
     }
 
     getTitle(){
-        if(this.state.id == -1){
+        if(this.state.id == '_add'){
             return <h3 className = "text-center">Add Superhero</h3>
         } else {
             return <h3 className = "text-center">Update Superhero</h3>
