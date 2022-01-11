@@ -32,8 +32,12 @@ class ListSuperheroComponent extends Component {
         });
     }
 
+    componentWillUnmount() {
+        this._isMounted = false;
+     }
+
     addSuperhero(){
-        this.props.history.push('/add-superhero/-1');
+        this.props.history.push('/add-superhero/_add');
     }
 
     render() {
