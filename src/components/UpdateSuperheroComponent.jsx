@@ -68,7 +68,7 @@ class UpdateSuperheroComponent extends Component {
                         <div className = "card col-md-6 offset-md-3 offset-md-3">
                             <h3 className = "text-center">Update Superhero</h3>
                             <div className = "card-body">
-                                <form>
+                                <form autoComplete="off">
                                     <div className = "form-group">
                                         <label>Name: </label>
                                         <input placeholder="Name" name = "name" className="form-control"
