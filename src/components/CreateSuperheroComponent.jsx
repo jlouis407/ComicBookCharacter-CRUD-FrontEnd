@@ -40,7 +40,7 @@ class CreateSuperheroComponent extends Component {
 
         SuperheroService.createSuperhero(superhero).then(res => {
                 this.props.history.push('/superheroes');
-       
+        });
 
         
     }
@@ -65,23 +65,13 @@ class CreateSuperheroComponent extends Component {
         this.props.history.push('/superheroes');
     }
 
-    getTitle(){
-        if(this.state.id === '_add'){
-            return <h3 className = "text-center">Add Superhero</h3>
-        } else {
-            return <h3 className = "text-center">Update Superhero</h3>
-        }
-    }
-
     render() {
         return (
             <div>
                 <div style={{paddingTop: "25px"}} className = "container">
                     <div className = "row">
                         <div style={{paddingTop: "15px"}} className = "card col-md-6 offset-md-3 offset-md-3">
-                            {
-                                this.getTitle()
-                            }
+                           <h3 className="text-center">Add Employee</h3>
                             <div className = "card-body">
                                 <form>
                                     <div className = "form-group">
@@ -102,6 +92,7 @@ class CreateSuperheroComponent extends Component {
                                     <div className = "form-group">
                                         <label>Status: </label>
                                         <select name = "status" className="form-control" value={this.state.status} onChange={this.changeStatusHandler}>
+                                            <option label="--- SELECT AN OPTION ---"></option>
                                             <option value="ALIVE">ALIVE</option>
                                             <option value="DECEASED">DECEASED</option>
                                             <option value="UNKNOWN">UNKNOWN</option>
@@ -109,7 +100,7 @@ class CreateSuperheroComponent extends Component {
 
                                     </div>
 
-                                    <button className="btn btn-success" onClick={this.saveOrUpdateSuperhero}>Save</button>
+                                    <button className="btn btn-success" onClick={this.saveSuperhero}>Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                 </form>
                             </div>
