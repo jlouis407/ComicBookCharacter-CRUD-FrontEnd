@@ -23,7 +23,7 @@ class ListSuperheroComponent extends Component {
     }
 
     editSuperhero(id){
-        this.props.history.push(`/add-superhero/${id}`);
+        this.props.history.push(`/update-superhero/${id}`);
     }
 
     componentDidMount(){
@@ -37,7 +37,7 @@ class ListSuperheroComponent extends Component {
      }
 
     addSuperhero(){
-        this.props.history.push('/add-superhero/_add');
+        this.props.history.push('/add-superhero');
     }
 
     render() {

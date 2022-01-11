@@ -31,6 +31,7 @@ class UpdateSuperheroComponent extends Component {
         e.preventDefault();
         let superhero = {name: this.state.name, brand: this.state.brand, year: this.state.year, status: this.state.status};
         console.log('superhero => ' + JSON.stringify(superhero));
+        console.log('id => ' + JSON.stringify(this.state.id));
 
         SuperheroService.updateSuperhero(superhero, this.state.id).then(res => {
             this.props.history.push("/superheroes");

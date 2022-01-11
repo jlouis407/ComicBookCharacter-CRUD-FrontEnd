@@ -17,39 +17,30 @@ class CreateSuperheroComponent extends Component {
         this.changeBrandHandler = this.changeBrandHandler.bind(this);
         this.changeYearHandler = this.changeYearHandler.bind(this);
         this.changeStatusHandler = this.changeStatusHandler.bind(this);
-        this.saveOrUpdateSuperhero = this.saveOrUpdateSuperhero.bind(this);
+        this.saveSuperhero = this.saveSuperhero.bind(this);
     }
 
     componentDidMount(){
 
-        if(this.state.id === '_add'){
-            return
-        } else {
             SuperheroService.getSuperheroById(this.state.id).then((res) => {
                 let superhero = res.data;
                 this.setState({name: superhero.name, 
                     brand: superhero.brand, 
                     year: superhero.year, 
-                    status: superhero.status})
+                    status: superhero.status
+                });
             });
-        }
     }
 
 
-    saveOrUpdateSuperhero = (e) => {
+    saveSuperhero = (e) => {
         e.preventDefault();
         let superhero = {name: this.state.name, brand: this.state.brand, year: this.state.year, status: this.state.status};
         console.log('superhero => ' + JSON.stringify(superhero));
 
-        if(this.state.id === '_add'){
-            SuperheroService.createSuperhero(superhero).then(res => {
+        SuperheroService.createSuperhero(superhero).then(res => {
                 this.props.history.push('/superheroes');
-            });
-        } else {
-            SuperheroService.updateSuperhero(superhero, this.state.id).then(res => {
-                this.props.history.push('/superheroes');
-            });
-        }
+       
 
         
     }
